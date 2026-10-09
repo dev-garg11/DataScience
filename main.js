@@ -233,6 +233,8 @@ function initMarqueeSliders() {
     { trackId: 'roadmapTrack', duration: 38 }
   ];
 
+  const checkIsMobile = () => window.innerWidth <= 768;
+
   marqueeConfigs.forEach(cfg => {
     const track = document.getElementById(cfg.trackId);
     if (!track) return;
@@ -256,7 +258,7 @@ function initMarqueeSliders() {
       group1.appendChild(card);
     });
 
-    // Group 2 (identical clone for seamless loop)
+    // Group 2 (identical clone for seamless loop on web)
     const group2 = group1.cloneNode(true);
     group2.setAttribute('aria-hidden', 'true');
 
@@ -267,16 +269,21 @@ function initMarqueeSliders() {
 
     track.classList.add('marquee-infinite-track');
     wrapper.classList.add('marquee-infinite-wrapper');
-    track.style.animationDuration = `${cfg.duration}s`;
 
-    // Mobile touch pause / resume support
-    wrapper.addEventListener('touchstart', () => {
-      track.style.animationPlayState = 'paused';
-    }, { passive: true });
+    function updateTrackMode() {
+      if (checkIsMobile()) {
+        track.style.animation = 'none';
+        track.style.webkitAnimation = 'none';
+        track.style.transform = 'none';
+        group2.style.display = 'none';
+      } else {
+        track.style.animation = `scrollMarqueeInfinite ${cfg.duration}s linear infinite`;
+        group2.style.display = 'flex';
+      }
+    }
 
-    wrapper.addEventListener('touchend', () => {
-      track.style.animationPlayState = 'running';
-    }, { passive: true });
+    updateTrackMode();
+    window.addEventListener('resize', updateTrackMode, { passive: true });
   });
 }
 
