@@ -240,38 +240,51 @@ section {
 
 .section-header {
   text-align: center;
-  max-width: 860px;
-  margin: 0 auto 36px;
+  max-width: 920px;
+  margin: 0 auto 40px;
 }
 
 .section-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(168, 85, 247, 0.15);
-  border: 1px solid rgba(192, 132, 252, 0.35);
-  color: #E9D5FF;
-  padding: 5px 14px;
+  gap: 8px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1.5px solid rgba(192, 132, 252, 0.45);
+  color: #F5E8FF;
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  backdrop-filter: blur(8px);
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition-fast);
+}
+
+.section-tag:hover {
+  border-color: #C084FC;
+  box-shadow: 0 0 28px rgba(192, 132, 252, 0.55);
+  transform: translateY(-1px);
 }
 
 .section-header h2 {
-  font-size: 2.3rem;
-  margin-bottom: 12px;
+  font-size: 2.65rem;
+  margin-bottom: 14px;
   color: #FFFFFF;
   line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.65;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Glassmorphism Cards */
@@ -964,41 +977,58 @@ section {
 .company-badges-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 .company-badge-card {
-  background: rgba(15, 7, 32, 0.75);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: rgba(18, 9, 38, 0.88);
+  border: 1.5px solid rgba(168, 85, 247, 0.22);
   border-radius: var(--radius-md);
-  padding: 12px 10px;
+  padding: 14px 12px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
+  min-height: 84px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   transition: var(--transition-fast);
 }
 
 .company-badge-card:hover {
-  background: rgba(147, 51, 234, 0.18);
+  background: rgba(147, 51, 234, 0.22);
   border-color: #C084FC;
-  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.45);
+  transform: translateY(-3px);
 }
 
-.company-logo-text {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
+.company-logo-img-wrapper {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.company-logo-img {
+  max-height: 28px;
+  max-width: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  transition: transform 0.2s ease;
+}
+
+.company-badge-card:hover .company-logo-img {
+  transform: scale(1.05);
 }
 
 .company-role-tag {
-  font-size: 0.72rem;
-  color: #C084FC;
-  font-weight: 500;
+  font-size: 0.76rem;
+  color: #D8B4FE;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2799,11 +2829,20 @@ section {
     width: 100% !important;
     gap: 10px !important;
   }
+  .section-tag {
+    font-size: 0.88rem !important;
+    padding: 7px 16px !important;
+  }
+  .section-header h2 {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 1.75rem; }
-  .section-header h2 { font-size: 1.65rem; }
+  .hero-title { font-size: 1.95rem; }
+  .section-header h2 { font-size: 1.85rem !important; }
+  .section-tag { font-size: 0.82rem !important; padding: 6px 14px !important; }
   .hero-ctas { flex-direction: column; width: 100%; }
   .btn { width: 100%; }
   .placement-metrics-grid {

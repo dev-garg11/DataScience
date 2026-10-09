@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 32" width="90" height="28" fill="none">
+    <circle cx="10" cy="16" r="8" fill="#FF6F00"/>
+    <circle cx="17" cy="16" r="6" fill="#22D3EE" opacity="0.85"/>
+    <text x="28" y="23" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">fractal</text>
+  </svg>

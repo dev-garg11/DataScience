@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 32" width="95" height="28" fill="none">
+    <path fill="#0C2340" d="M2 4h106v24H2z" rx="4"/>
+    <path fill="#3395FF" d="M12 9l-4 14h4l2-6h5l2-8h-9zm3 3h3l-1 3h-3l1-3z"/>
+    <text x="27" y="22" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">Razorpay</text>
+  </svg>

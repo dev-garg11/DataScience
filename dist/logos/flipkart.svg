@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 32" width="90" height="28" fill="none">
+    <rect x="2" y="4" width="24" height="24" rx="5" fill="#2874F0"/>
+    <path d="M14 9v6h4l-5 8v-6H9l5-8z" fill="#FFE500"/>
+    <text x="32" y="23" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF">Flipkart</text>
+  </svg>
